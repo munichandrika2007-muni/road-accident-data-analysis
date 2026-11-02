@@ -1,0 +1,6 @@
+accident_datetime,region,road_name,vehicle_type,severity,weather
+2026-01-05 08:30,Hyderabad,NH 44,Motorcycle,Serious,Clear
+2026-01-06 19:15,Warangal,NH 163,Car,Minor,Rain
+2026-01-08 22:10,Hyderabad,Outer Ring Road,Truck,Fatal,Fog
+2026-01-10 14:45,Karimnagar,SH 1,Bus,Unknown,Cloudy
+2026-01-12 07:20,Nizamabad,NH 63,Motorcycle,Minor,Clear

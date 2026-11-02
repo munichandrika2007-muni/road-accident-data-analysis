@@ -1,0 +1,6 @@
+{% extends "base.html" %}{% block content %}
+<div class="hero p-4 mb-4"><h1 class="h2">Road Accident Data Dashboard</h1><p class="mb-0">Explore patterns by time, location, vehicle and recorded severity.</p></div>
+<div class="row g-3 mb-4">{% for label,val in [('Total records',stats.total),('Locations',stats.locations),('Serious records',stats.serious),('Fatal records',stats.fatal),('Average per active day',stats.avg_daily),('Missing weather values',stats.missing_weather)] %}<div class="col-6 col-lg-4"><div class="card stat p-3"><div class="text-secondary">{{label}}</div><div class="number">{{val}}</div></div></div>{% endfor %}</div>
+<div class="row g-4">{% for c in charts %}<div class="col-lg-6"><div class="card panel p-3"><img class="chart" src="{{url_for('static',filename=c)}}" alt="Accident chart"></div></div>{% endfor %}
+<div class="col-lg-6"><div class="card panel p-3"><h5>Recorded counts by region</h5><table class="table">{% for k,v in top.items() %}<tr><td>{{k}}</td><td>{{v}}</td></tr>{% else %}<tr><td>No data yet.</td></tr>{% endfor %}</table></div></div>
+<div class="col-lg-6"><div class="card panel p-3"><h5>Missing data report</h5><table class="table">{% for m in missing %}<tr><td>{{m.field}}</td><td>{{m.count}}</td></tr>{% else %}<tr><td>No data yet.</td></tr>{% endfor %}</table></div></div></div>{% endblock %}
