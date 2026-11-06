@@ -1,10 +1,5 @@
-.env
 .venv/
 __pycache__/
-*.py[cod]
-static/charts/*.png
-reports/*.csv
-!static/charts/.gitkeep
-!reports/.gitkeep
-
+*.pyc
 .env
+instance/
